@@ -6,7 +6,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
@@ -17,8 +16,7 @@ public class LectorJson {
             Reader reader = Files.newBufferedReader(Paths.get(fichero));
             //convierte el array en un arraylist de users
             ArrayList<Pokemon> listaPokemon =
-                    new Gson().fromJson(reader, new TypeToken<ArrayList<Pokemon>>() {
-                    }.getType());
+                    new Gson().fromJson(reader, new TypeToken<ArrayList<Pokemon>>() {}.getType());
             reader.close();
             return listaPokemon;
         } catch (Exception ex) {
